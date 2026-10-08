@@ -55,7 +55,7 @@ def load_csv(data, filename='weather_data.csv'):
     logger.info("load to csv")
     fieldnames = data[0].keys()
 
-    with open(filename, mode="w", newline="", encoding="utf-8") as f:
+    with open(filename, mode="a", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames = fieldnames)
         writer.writeheader()
         writer.writerows(data)
